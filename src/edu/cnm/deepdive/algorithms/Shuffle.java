@@ -7,14 +7,20 @@ import java.util.Arrays;
 import java.util.Random;
 
 /**
+ * Implements the Fisher-Yates algorithm to shuffle an array of integer values
+ * 
  * @author Abdul Haseeb Gauba
  *
  */
 public class Shuffle {
 
-   private static final int DEFAULT_SIZE =50;
+   private static final int DEFAULT_SIZE =100;
   /**
-   * @param args
+   * Reads a command line argument to g=create an array of the specified size,
+   * then generates sequential values in the array and shuffles them,
+   * printing the values out before and after the shuffle.
+   * 
+   * @param args command line arguments; first value in the array size (default = 50)
    */
   public static void main(String[] args) {
      int size = (args.length > 0) ? Integer.parseInt(args[0]): DEFAULT_SIZE;
@@ -31,6 +37,11 @@ public class Shuffle {
    }
    return data;
   }
+  /**
+   * uses the Fisher-Yates algorithm to shuffle an array of int's
+   * 
+   * @param data
+   */
   public static void shuffle(int[] data){
     Random rng = new Random(); 
     for(int i = data.length -1; i > 0; i--){
